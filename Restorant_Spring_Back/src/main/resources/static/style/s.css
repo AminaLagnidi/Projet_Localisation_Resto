@@ -1,0 +1,17 @@
+
+
+@media (max-width: 991px) {
+    .page-container {
+        position: relative;
+        top: 0px;
+        padding-left: 0;
+    }
+}
+
+.header-desktop {
+left:0px;
+}
+
+.page-container{
+    padding-left: 0px;
+}

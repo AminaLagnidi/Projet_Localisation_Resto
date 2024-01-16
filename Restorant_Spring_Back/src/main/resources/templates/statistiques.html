@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Restaurants par Ville</title>
+	<!-- Include Chart.js library -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+<div style="width: 80%; margin: auto;">
+	<canvas id="restaurantsByCityChart"></canvas>
+</div>
+
+<script>
+	// Fetch data for the number of restaurants per city
+	$(document).ready(function () {
+		$.ajax({
+		url: 'restos/villes/restaurants',
+		contentType: "application/json",
+		dataType: "json",
+		type: 'GET',
+		success: function (data) {
+			// Call a function to generate the restaurant by city chart with the retrieved data
+			generateRestaurantByCityChart(data);
+		},
+		error: function (jqXHR, textStatus, errorThrown) {
+			console.log(textStatus);
+		}
+	});
+	});
+	// Function to generate the restaurant by city chart
+	function generateRestaurantByCityChart(data) {
+		var labels = [];
+		var dt = [];
+
+		// Process the data to get the labels and data
+		// Adjust this part based on your actual data structure
+		data.forEach(function (cityData) {
+			labels.push(cityData.ville);
+			dt.push(cityData.restaurantCount);
+		});
+
+		// Use the data to generate the chart
+		var ctx = document.getElementById('restaurantsByCityChart').getContext('2d');
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: labels,
+				datasets: [{
+					data: dt,
+					backgroundColor: 'rgba(75, 192, 192, 0.2)',
+					borderColor: 'rgba(75, 192, 192, 1)',
+					borderWidth: 1
+				}]
+			},
+			options: {
+				title: {
+					display: true,
+					text: 'Nombre de restaurants par ville',
+					fontSize: 21,
+					padding: 20,
+					fontFamily: 'Calibri',
+				},
+				legend: {
+					display: false
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						},
+						scaleLabel: {
+							display: true,
+							labelString: 'Nombre de restaurants'
+						}
+					}],
+					xAxes: [{
+						scaleLabel: {
+							display: true,
+							labelString: 'Villes'
+						}
+					}],
+				}
+			}
+		});
+	}
+</script>
+</body>
+</html>
