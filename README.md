@@ -79,6 +79,9 @@ En résumé, notre application de localisation de restaurants tire profit de l'e
 - Spring Boot
 - React
 - Spring Security
-- Docker
 - SonarQube
+  ![image](https://github.com/AminaLagnidi/Projet_Localisation_Resto/assets/146132357/33b4c56d-fe80-4be3-a4c7-37f07b4f8008)
+
+- Docker
+
 ![image](https://github.com/AminaLagnidi/Projet_Localisation_Resto/assets/146132357/6af84473-61d6-4f3f-90cb-951168791ab3)
