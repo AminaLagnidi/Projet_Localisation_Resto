@@ -12,6 +12,10 @@ La conception du backend de notre application de localisation de restaurants rep
 - La création rapide de points d'accès RESTful.
 - La gestion des dépendances.
 
+
+https://github.com/AminaLagnidi/Projet_Localisation_Resto/assets/146132357/1ffa568a-a048-4f23-a7fe-1a008072f73f
+
+
 ### Simplicité de développement
 Spring Boot simplifie considérablement le développement d'applications Java en fournissant des conventions par défaut et des configurations auto-ajustées. Les annotations telles que `@RestController`, `@Service`, et `@Repository` facilitent la création de composants clés, permettant aux développeurs de se concentrer sur la logique métier plutôt que sur la configuration laborieuse.
 
